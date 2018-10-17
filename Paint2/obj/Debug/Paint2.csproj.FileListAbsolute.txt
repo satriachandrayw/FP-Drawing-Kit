@@ -1,0 +1,9 @@
+c:\users\satria1978\documents\visual studio 2015\Projects\Paint2\Paint2\bin\Debug\Paint2.exe.config
+c:\users\satria1978\documents\visual studio 2015\Projects\Paint2\Paint2\obj\Debug\Paint_sederhana.Form1.resources
+c:\users\satria1978\documents\visual studio 2015\Projects\Paint2\Paint2\obj\Debug\Paint2.Properties.Resources.resources
+c:\users\satria1978\documents\visual studio 2015\Projects\Paint2\Paint2\obj\Debug\Paint2.csproj.GenerateResource.Cache
+c:\users\satria1978\documents\visual studio 2015\Projects\Paint2\Paint2\bin\Debug\Paint2.exe
+c:\users\satria1978\documents\visual studio 2015\Projects\Paint2\Paint2\bin\Debug\Paint2.pdb
+c:\users\satria1978\documents\visual studio 2015\Projects\Paint2\Paint2\obj\Debug\Paint2.exe
+c:\users\satria1978\documents\visual studio 2015\Projects\Paint2\Paint2\obj\Debug\Paint2.pdb
+c:\users\satria1978\documents\visual studio 2015\Projects\Paint2\Paint2\obj\Debug\Paint2.csprojResolveAssemblyReference.cache
