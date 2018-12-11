@@ -35,17 +35,31 @@
             this.refreshButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.redColorButton = new System.Windows.Forms.Button();
+            this.orangeColorButton = new System.Windows.Forms.Button();
+            this.yellowColorButton = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.lightblueColorButton = new System.Windows.Forms.Button();
+            this.blueColorButton = new System.Windows.Forms.Button();
+            this.greenColorButton = new System.Windows.Forms.Button();
+            this.whiteColorButton = new System.Windows.Forms.Button();
+            this.browseColorButton = new System.Windows.Forms.Button();
+            this.opacityTrackBar = new System.Windows.Forms.TrackBar();
+            this.opacityText = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.opacityTrackBar)).BeginInit();
             this.SuspendLayout();
             // 
             // lineButton
             // 
+            this.lineButton.BackColor = System.Drawing.SystemColors.Control;
             this.lineButton.Location = new System.Drawing.Point(13, 15);
             this.lineButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lineButton.Name = "lineButton";
             this.lineButton.Size = new System.Drawing.Size(75, 23);
             this.lineButton.TabIndex = 0;
             this.lineButton.Text = "Line";
-            this.lineButton.UseVisualStyleBackColor = true;
+            this.lineButton.UseVisualStyleBackColor = false;
             this.lineButton.Click += new System.EventHandler(this.lineButton_Click);
             // 
             // rectangButton
@@ -73,10 +87,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel1.Location = new System.Drawing.Point(13, 128);
+            this.panel1.Location = new System.Drawing.Point(13, 104);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(673, 339);
+            this.panel1.Size = new System.Drawing.Size(673, 363);
             this.panel1.TabIndex = 3;
             this.panel1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseClick_1);
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown_1);
@@ -116,11 +130,138 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.undoButton_Click);
             // 
+            // redColorButton
+            // 
+            this.redColorButton.BackColor = System.Drawing.Color.Red;
+            this.redColorButton.Location = new System.Drawing.Point(279, 15);
+            this.redColorButton.Name = "redColorButton";
+            this.redColorButton.Size = new System.Drawing.Size(30, 30);
+            this.redColorButton.TabIndex = 7;
+            this.redColorButton.UseVisualStyleBackColor = false;
+            this.redColorButton.Click += new System.EventHandler(this.rebColorButton_Click);
+            // 
+            // orangeColorButton
+            // 
+            this.orangeColorButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.orangeColorButton.Location = new System.Drawing.Point(315, 15);
+            this.orangeColorButton.Name = "orangeColorButton";
+            this.orangeColorButton.Size = new System.Drawing.Size(30, 30);
+            this.orangeColorButton.TabIndex = 8;
+            this.orangeColorButton.UseVisualStyleBackColor = false;
+            this.orangeColorButton.Click += new System.EventHandler(this.orangeColorButton_Click);
+            // 
+            // yellowColorButton
+            // 
+            this.yellowColorButton.BackColor = System.Drawing.Color.Yellow;
+            this.yellowColorButton.Location = new System.Drawing.Point(351, 15);
+            this.yellowColorButton.Name = "yellowColorButton";
+            this.yellowColorButton.Size = new System.Drawing.Size(30, 30);
+            this.yellowColorButton.TabIndex = 9;
+            this.yellowColorButton.UseVisualStyleBackColor = false;
+            this.yellowColorButton.Click += new System.EventHandler(this.yellowColorButton_Click);
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.Black;
+            this.button6.Location = new System.Drawing.Point(387, 15);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(30, 30);
+            this.button6.TabIndex = 10;
+            this.button6.UseVisualStyleBackColor = false;
+            // 
+            // lightblueColorButton
+            // 
+            this.lightblueColorButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.lightblueColorButton.Location = new System.Drawing.Point(279, 51);
+            this.lightblueColorButton.Name = "lightblueColorButton";
+            this.lightblueColorButton.Size = new System.Drawing.Size(30, 30);
+            this.lightblueColorButton.TabIndex = 11;
+            this.lightblueColorButton.UseVisualStyleBackColor = false;
+            this.lightblueColorButton.Click += new System.EventHandler(this.lightblueColorButton_Click);
+            // 
+            // blueColorButton
+            // 
+            this.blueColorButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.blueColorButton.Location = new System.Drawing.Point(315, 51);
+            this.blueColorButton.Name = "blueColorButton";
+            this.blueColorButton.Size = new System.Drawing.Size(30, 30);
+            this.blueColorButton.TabIndex = 12;
+            this.blueColorButton.UseVisualStyleBackColor = false;
+            this.blueColorButton.Click += new System.EventHandler(this.blueColorButton_Click);
+            // 
+            // greenColorButton
+            // 
+            this.greenColorButton.BackColor = System.Drawing.Color.Lime;
+            this.greenColorButton.Location = new System.Drawing.Point(351, 51);
+            this.greenColorButton.Name = "greenColorButton";
+            this.greenColorButton.Size = new System.Drawing.Size(30, 30);
+            this.greenColorButton.TabIndex = 13;
+            this.greenColorButton.UseVisualStyleBackColor = false;
+            this.greenColorButton.Click += new System.EventHandler(this.greenColorButton_Click);
+            // 
+            // whiteColorButton
+            // 
+            this.whiteColorButton.BackColor = System.Drawing.Color.White;
+            this.whiteColorButton.Location = new System.Drawing.Point(387, 51);
+            this.whiteColorButton.Name = "whiteColorButton";
+            this.whiteColorButton.Size = new System.Drawing.Size(30, 30);
+            this.whiteColorButton.TabIndex = 14;
+            this.whiteColorButton.UseVisualStyleBackColor = false;
+            this.whiteColorButton.Click += new System.EventHandler(this.whiteColorButton_Click);
+            // 
+            // browseColorButton
+            // 
+            this.browseColorButton.Location = new System.Drawing.Point(423, 15);
+            this.browseColorButton.Name = "browseColorButton";
+            this.browseColorButton.Size = new System.Drawing.Size(36, 66);
+            this.browseColorButton.TabIndex = 15;
+            this.browseColorButton.UseVisualStyleBackColor = true;
+            // 
+            // opacityTrackBar
+            // 
+            this.opacityTrackBar.Location = new System.Drawing.Point(464, 43);
+            this.opacityTrackBar.Maximum = 100;
+            this.opacityTrackBar.Name = "opacityTrackBar";
+            this.opacityTrackBar.Size = new System.Drawing.Size(140, 56);
+            this.opacityTrackBar.TabIndex = 16;
+            this.opacityTrackBar.Scroll += new System.EventHandler(this.opacityTrackBar_Scroll);
+            // 
+            // opacityText
+            // 
+            this.opacityText.AutoSize = true;
+            this.opacityText.Location = new System.Drawing.Point(608, 51);
+            this.opacityText.Name = "opacityText";
+            this.opacityText.Size = new System.Drawing.Size(56, 17);
+            this.opacityText.TabIndex = 17;
+            this.opacityText.Text = "Opacity";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(29, 45);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(47, 42);
+            this.button3.TabIndex = 18;
+            this.button3.Text = "Set";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.setButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 480);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.opacityText);
+            this.Controls.Add(this.opacityTrackBar);
+            this.Controls.Add(this.browseColorButton);
+            this.Controls.Add(this.whiteColorButton);
+            this.Controls.Add(this.greenColorButton);
+            this.Controls.Add(this.blueColorButton);
+            this.Controls.Add(this.lightblueColorButton);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.yellowColorButton);
+            this.Controls.Add(this.orangeColorButton);
+            this.Controls.Add(this.redColorButton);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.refreshButton);
@@ -134,7 +275,9 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            ((System.ComponentModel.ISupportInitialize)(this.opacityTrackBar)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -147,6 +290,18 @@
         private System.Windows.Forms.Button refreshButton;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button redColorButton;
+        private System.Windows.Forms.Button orangeColorButton;
+        private System.Windows.Forms.Button yellowColorButton;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button lightblueColorButton;
+        private System.Windows.Forms.Button blueColorButton;
+        private System.Windows.Forms.Button greenColorButton;
+        private System.Windows.Forms.Button whiteColorButton;
+        private System.Windows.Forms.Button browseColorButton;
+        private System.Windows.Forms.TrackBar opacityTrackBar;
+        private System.Windows.Forms.Label opacityText;
+        private System.Windows.Forms.Button button3;
     }
 }
 

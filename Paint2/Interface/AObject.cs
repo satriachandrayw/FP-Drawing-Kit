@@ -36,17 +36,12 @@ namespace SimpleDrawingKit.Interface
         public abstract void DrawEdit();//edit
         public abstract void DrawStatic();//static
         public abstract void DrawHandle();
+        //public abstract void DrawFill(int Opacity);
         public abstract Point GetHandlePoint(int value);
         public abstract int GetClickHandle(Point posisi);//mendapat titik yang diklik
         public abstract Boolean Select(Point posisi);
         public abstract void Translate(int difX,int difY);
         public abstract void Resize(int posisiClick, Point posisi);
-
-        public abstract void FlipVertical(int midY);
-        public abstract void FlipHorizontal(int midX);
-
-        public abstract void RotateRight();
-        public abstract void RotateLeft();
 
         public virtual void AddChild(LinkedList<AObject> listChild)
         {

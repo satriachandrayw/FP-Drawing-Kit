@@ -25,6 +25,9 @@ namespace SimpleDrawingKit
         private bool shouldPaint = false;
         Boolean select;
         Point initial;
+
+        private bool SetState = false;
+        private int sliderOpacity = 0;
         private AObject objectSelected;
         private int clickPosition = -1;
         private ATool toolSelected;
@@ -36,17 +39,6 @@ namespace SimpleDrawingKit
         List<AObject> listObject = new List<AObject>();
         private LinkedList<AObject> drawables = new LinkedList<AObject>();
 
-        /*Pen pen;
-        private Graphics Gambar;
-        private Point preCor, newCor;
-        private bool MyPic = false;
-        private int curX, curY, x, y, showX, showY;
-        int cirW, cirL;
-        private double length;
-        private int bentuk = 0, ee = 0;
-        private const double EPSILON = 3.0;
-        //private Color warna;*/
-
         void buttonColor()
         {
             lineButton.BackColor = Color.Snow;
@@ -55,42 +47,6 @@ namespace SimpleDrawingKit
             //undoToolStripMenuItem.BackColor = Color.Snow;
             //cursorToolStripMenuItem.BackColor = Color.Snow;
         }
-        /*class Line
-        {
-            public Point from, to;
-
-            public bool Intersect(int xTest, int yTest)
-            {
-                double m = GetSlope();
-                double b = to.Y - m * to.X;
-                double y_point = m * xTest + b;
-
-                if (Math.Abs(yTest - y_point) < EPSILON)
-                {
-                    System.Diagnostics.Debug.WriteLine("Terpilih");
-                    return true;
-                }
-                return false;
-            }
-
-            public double GetSlope()
-            {
-                double m = (double)(to.Y - from.Y) / (double)(to.X - from.X);
-                return m;
-            }
-        }*/
-
-        /*class Circle
-        {
-            public int xFrom, yFrom;
-            public Point to;
-        }*/
-
-        /*class Rectang
-        {
-            public int xFrom, yFrom;
-            public Point to;
-        }*/
 
         List<Line> listLine = new List<Line>();
         List<Circle> listCircle = new List<Circle>();
@@ -116,35 +72,6 @@ namespace SimpleDrawingKit
         private void Form1_Load(object sender, EventArgs e)
         {
 
-            /*foreach (Line line in listLine)
-            {
-                Gambar.DrawLine(pen, line.from, line.to);
-            }
-
-            foreach (Circle circle in listCircle)
-            {
-                p.Width = 2;
-                cirW = Math.Abs(circle.to.X - circle.xFrom);
-                cirL = Math.Abs(circle.to.Y - circle.yFrom);
-                Rectangle rec = new Rectangle(Math.Min(circle.to.X, circle.xFrom),
-                Math.Min(circle.to.Y, circle.yFrom),
-                Math.Abs(circle.to.X - circle.xFrom),
-                Math.Abs(circle.to.Y - circle.yFrom));
-                Gambar.DrawEllipse(pen, rec);
-            }
-
-            foreach (Rectang rectang in listRectang)
-            {
-                p.Width = 2;
-                int width = rectang.to.X - rectang.xFrom;
-                int height = rectang.to.Y - rectang.yFrom;
-                Rectangle rect = new Rectangle(Math.Min(rectang.to.X, rectang.xFrom),
-                Math.Min(rectang.to.Y, rectang.yFrom),
-                Math.Abs(rectang.to.X - rectang.xFrom),
-                Math.Abs(rectang.to.Y - rectang.yFrom));
-                newCoor = new Point(rectang.to.X, rectang.to.Y);
-                Gambar.DrawRectangle(pen, rect);
-            }*/
         }
         private void panel1_MouseClick_1(object sender, MouseEventArgs e)
         {
@@ -166,27 +93,6 @@ namespace SimpleDrawingKit
                     shouldPaint = true;
                 }
             }
-            /*if (MyPic == true)
-            x = e.X;
-            y = e.Y;
-            showX = e.X - curX;
-            showY = curY - e.Y;
-
-            if (bentuk == 1)
-            {
-                Gambar.DrawLine(new Pen(Color.Black), curX, curY, e.X, e.Y);
-                Gambar.DrawLine(new Pen(Color.Red), curX, curY, e.X, e.Y);
-            }
-            if (bentuk == 2)
-            {
-                Gambar.DrawRectangle(new Pen(Color.Black), curX, curY, showX, -showY);
-                Gambar.DrawRectangle(new Pen(Color.Green), curX, curY, showX, -showY);
-            }
-            if (bentuk == 3)
-            {
-                Gambar.DrawEllipse(new Pen(Color.Black), curX, curY, showX, -showY);
-                Gambar.DrawEllipse(new Pen(Color.Blue), curX, curY, showX, -showY);
-            }*/
         }
         private void panel1_MouseDown_1(object sender, MouseEventArgs e)
         {
@@ -197,15 +103,8 @@ namespace SimpleDrawingKit
                 //toolSelected.MouseDown(sender, e, panel1, listObject);
                 toolSelected.MouseDown(sender, e, panel1, drawables);
             }
-            /*if (e.Button == MouseButtons.Left)
-            {
-                MyPic = true;
-                ee++;
-            }
-
-            curX = e.X;
-            curY = e.Y;*/
         }
+
         private void panel1_MouseMove_1(object sender, MouseEventArgs e)
         {
             if (toolSelected != null && shouldPaint == true)
@@ -215,10 +114,6 @@ namespace SimpleDrawingKit
                 toolSelected.MouseMove(sender, e, panel1, drawables);
                 this.Invalidate();
             }
-            /*length = Math.Sqrt((showX * showX) + (showY * showY));
-            //TextBox1.Text = Convert.ToString(showX);
-            //TextBox2.Text = Convert.ToString(showY);
-            //TextBox3.Text = Convert.ToString(length);*/
         }
         private void panel1_MouseUp(object sender, MouseEventArgs e)
         {
@@ -256,13 +151,14 @@ namespace SimpleDrawingKit
         private void lineButton_Click(object sender, EventArgs e)
         {
             this.Refresh();
-            if (lineTool.isActive == false)
+            if (lineTool.isActive == false && SetState == true)
             {
-                reset();
-                lineTool.isActive = true;
-                toolSelected = lineTool;
-                buttonColor();
-                lineTool.BackColor = Color.Blue;
+                    reset();
+                    Opacity = opacityTrackBar.Value;
+                    lineTool.isActive = true;
+                    toolSelected = lineTool;
+                    buttonColor();
+                    lineTool.BackColor = Color.Blue;
             }
             else
             {
@@ -275,13 +171,14 @@ namespace SimpleDrawingKit
         private void rectangButton_Click(object sender, EventArgs e)
         {
             this.Refresh();
-            if (rectangleTool.isActive == false)
+            if (rectangleTool.isActive == false && SetState == true)
             {
-                reset();
-                rectangleTool.isActive = true;
-                toolSelected = rectangleTool;
-                buttonColor();
-                rectangleTool.BackColor = Color.Red;
+                    reset();
+                    rectangleTool.rectangleOpacity = opacityTrackBar.Value;
+                    rectangleTool.isActive = true;
+                    toolSelected = rectangleTool;
+                    buttonColor();
+                    rectangleTool.BackColor = Color.Blue;
             }
             else
             {
@@ -298,13 +195,14 @@ namespace SimpleDrawingKit
         private void circleButton_Click(object sender, EventArgs e)
         {
             this.Refresh();
-            if (circleTool.isActive == false)
+            if (circleTool.isActive == false && SetState == true)
             {
-                reset();
-                circleTool.isActive = true;
-                toolSelected = circleTool;
-                buttonColor();
-                circleTool.BackColor = Color.Red;
+                    reset();
+                    circleTool.circleOpacity = opacityTrackBar.Value;
+                    circleTool.isActive = true;
+                    toolSelected = circleTool;
+                    buttonColor();
+                    circleTool.BackColor = Color.Blue;
             }
             else
             {
@@ -348,6 +246,7 @@ namespace SimpleDrawingKit
                 selectTool.ParentForm = this;
                 toolSelected = selectTool;
                 buttonColor();
+                //  SetTransparency(opacityTrackBar.value);
                selectTool.BackColor = Color.Red;
             }
             else
@@ -358,6 +257,10 @@ namespace SimpleDrawingKit
                 buttonColor();
             }
         }
+        //public void SetTransparency()
+        //{
+
+        //}
         private void refreshButton_Click(object sender, EventArgs e)
         {
             this.Refresh();
@@ -412,6 +315,33 @@ namespace SimpleDrawingKit
             objectSelected = null;
             clickPosition = -1;
             select = false;
+            SetState = false;
+        }
+
+
+
+        private void opacityTrackBar_Scroll(object sender, EventArgs e)
+        {
+            this.Refresh();
+            //if (SetState = false)
+            {
+                //opacityText.Text = "Opacity : " + value();
+                opacityText.Text = "Opacity : " + opacityTrackBar.Value.ToString();
+                //rectangleOpacity = circleOpacity = opacityTrackBar.Value;
+                //Refresh();
+            }
+
+        }
+
+        private void setButton_Click(object sender, EventArgs e)
+        {
+            this.Refresh();
+            if (SetState == false)
+            {
+                //Refresh();
+                sliderOpacity = opacityTrackBar.Value;
+                SetState = true;
+            }
         }
 
         public void Remove_Object(AObject Object)
@@ -424,9 +354,43 @@ namespace SimpleDrawingKit
             drawables.AddLast(Object);
         }
 
+        private void rebColorButton_Click(object sender, EventArgs e)
+        {
+            /*SolidBrush fill = new SolidBrush(Color.FromArgb(100, 100,100,100));
+            RectangleTool.FillObject(fill, rect);*/
+        }
 
+        private void orangeColorButton_Click(object sender, EventArgs e)
+        {
+            lineTool.ForeColor = Color.Orange;
+            circleTool.ForeColor = Color.Orange;
+            rectangleTool.ForeColor = Color.Orange;
+        }
 
+        private void yellowColorButton_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void lightblueColorButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void blueColorButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void greenColorButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void whiteColorButton_Click(object sender, EventArgs e)
+        {
+
+        }
 
 
     }

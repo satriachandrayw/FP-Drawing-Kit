@@ -6,12 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//using System.Drawing;
 
 namespace SimpleDrawingKit.Tool
 {
     class RectangleTool : ATool
     {
         public bool isActive { set; get; }
+        public int rectangleOpacity { set; get; }
         private Rectangle rectangleObject;
         public override bool MouseClick(object sender, MouseEventArgs e, LinkedList<AObject> listObject)
         {
@@ -21,7 +23,7 @@ namespace SimpleDrawingKit.Tool
 
         public override void MouseDown(object sender, MouseEventArgs e, Panel panel1, LinkedList<AObject> listObject)
         {
-            rectangleObject = new Rectangle(e.Location);
+            rectangleObject = new Rectangle(e.Location, rectangleOpacity);
             rectangleObject.to = e.Location;
             rectangleObject.setGraphics(panel1.CreateGraphics());
             rectangleObject.Draw();
@@ -58,5 +60,10 @@ namespace SimpleDrawingKit.Tool
         {
             throw new NotImplementedException();
         }
+
+       /* internal static void FillObject(SolidBrush fill, object rect)
+        {
+            throw ne/w NotImplementedException();
+        }*/
     }
 }

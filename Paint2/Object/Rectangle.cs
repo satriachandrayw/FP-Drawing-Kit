@@ -15,6 +15,7 @@ namespace SimpleDrawingKit.Object
         //public Point to { get; set; }
         public int Width { get; set; }
         public int Height { get; set; }
+        public int Opacity;
         private Pen p;
 
         public Rectangle()
@@ -23,24 +24,34 @@ namespace SimpleDrawingKit.Object
             p.Width = 2;
         }
 
-        public Rectangle(Point awal) : this()
+        public Rectangle(Point awal, int rectangleOpacity) : this()
         {
             this.from = awal;
             this.Width = 0;
             this.Height = 0;
+            this.Opacity = rectangleOpacity;
         }
 
         public override void DrawObject()
         {
             int width = to.X - from.X;
             int height = to.Y - from.Y;
+            SolidBrush fill = new SolidBrush(Color.FromArgb(Opacity, 0, 0, 0));
             System.Drawing.Rectangle rect = new System.Drawing.Rectangle(Math.Min(to.X, from.X),
                                                 Math.Min(to.Y, from.Y),
                                                 Math.Abs(to.X - from.X),
                                                 Math.Abs(to.Y - from.Y));
             this.getGraphics().SmoothingMode = SmoothingMode.AntiAlias;
             this.getGraphics().DrawRectangle(p, rect);
+            this.getGraphics().FillRectangle(fill, rect);
         }
+
+        /*public override void FillObject()
+        {
+            //SolidBrush fill = new SolidBrush(Color.FromArgb(100, r, g, b));
+            this.getGraphics().FillRectangle(SolidBrush fill, System.Drawing.Rectangle rect);
+
+        }*/
 
         public override void DrawPreview()
         {
@@ -59,6 +70,7 @@ namespace SimpleDrawingKit.Object
             this.p.Color = Color.Black;
             DrawObject();
         }
+
 
         public override Boolean Select(Point posisi)
         {
@@ -168,77 +180,6 @@ namespace SimpleDrawingKit.Object
             }
             this.Width = Math.Abs(from.X - to.X);
             this.Height = Math.Abs(from.Y - to.Y);
-        }
-
-        public override void FlipVertical(int midY)
-        {
-            Point pojokKiriAtas = new Point(Math.Min(this.to.X, this.from.X), Math.Min(this.to.Y, this.from.Y));
-            Point pojokKananBawah = new Point(Math.Max(this.to.X, this.from.X), Math.Max(this.to.Y, this.from.Y));
-            Point pojokKananAtas;
-            Point pojokKiriBawah;
-            if (pojokKiriAtas.X < midY)
-            {
-                pojokKananAtas = new Point(pojokKiriAtas.X + 2 * Math.Abs(pojokKiriAtas.X - midY), pojokKiriAtas.Y);
-            }
-            else
-            {
-                pojokKananAtas = new Point(pojokKiriAtas.X - 2 * Math.Abs(pojokKiriAtas.X - midY), pojokKiriAtas.Y);
-            }
-
-            if (pojokKananBawah.X < midY)
-            {
-                pojokKiriBawah = new Point(pojokKananBawah.X + 2 * Math.Abs(pojokKananBawah.X - midY), pojokKananBawah.Y);
-            }
-            else
-            {
-                pojokKiriBawah = new Point(pojokKananBawah.X - 2 * Math.Abs(pojokKananBawah.X - midY), pojokKananBawah.Y);
-            }
-            this.from = new Point(pojokKiriBawah.X, pojokKananAtas.Y);
-            this.to = new Point(pojokKananAtas.X, pojokKiriBawah.Y);
-            this.Width = Math.Abs(from.X - to.X);
-            this.Height = Math.Abs(from.Y - to.Y);
-            notify();
-        }
-
-        public override void FlipHorizontal(int midX)
-        {
-            Point pojokKiriAtas = new Point(Math.Min(this.to.X, this.from.X), Math.Min(this.to.Y, this.from.Y));
-            Point pojokKananBawah = new Point(Math.Max(this.to.X, this.from.X), Math.Max(this.to.Y, this.from.Y));
-            Point pojokKananAtas;
-            Point pojokKiriBawah;
-            if (pojokKiriAtas.Y < midX)
-            {
-                pojokKiriBawah = new Point(pojokKiriAtas.X, pojokKiriAtas.Y + 2 * Math.Abs(pojokKiriAtas.Y - midX));
-            }
-            else
-            {
-                pojokKiriBawah = new Point(pojokKiriAtas.X, pojokKiriAtas.Y - 2 * Math.Abs(pojokKiriAtas.Y - midX));
-            }
-            if (pojokKananBawah.Y < midX)
-            {
-                pojokKananAtas = new Point(pojokKananBawah.X, pojokKananBawah.Y + 2 * Math.Abs(pojokKananBawah.Y - midX));
-            }
-            else
-            {
-                pojokKananAtas = new Point(pojokKananBawah.X, pojokKananBawah.Y - 2 * Math.Abs(pojokKananBawah.Y - midX));
-            }
-
-            this.from = new Point(pojokKiriBawah.X, pojokKananAtas.Y);
-            this.to = new Point(pojokKananAtas.X, pojokKiriBawah.Y);
-
-            this.Width = Math.Abs(from.X - to.X);
-            this.Height = Math.Abs(from.Y - to.Y);
-            notify();
-        }
-
-        public override void RotateRight()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void RotateLeft()
-        {
-            throw new NotImplementedException();
         }
     }
 }

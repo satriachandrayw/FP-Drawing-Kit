@@ -127,55 +127,5 @@ namespace SimpleDrawingKit.Object
                 this.to = posisi;
             }
         }
-
-        public override void FlipVertical(int midY)
-        {
-            if (this.from.X < midY)
-            {
-                this.from = new Point(this.from.X + 2 * Math.Abs(midY - this.from.X), this.from.Y);
-            }
-            else
-            {
-                this.from = new Point(this.from.X - 2 * Math.Abs(midY - this.from.X), this.from.Y);
-            }
-            if (this.to.X < midY)
-            {
-                this.to = new Point(this.to.X + 2 * Math.Abs(midY - this.to.X), this.to.Y);
-            }
-            else
-            {
-                this.to = new Point(this.to.X - 2 * Math.Abs(midY - this.to.X), this.to.Y);
-            }
-        }
-
-        public override void FlipHorizontal(int midX)
-        {
-            if (this.from.Y < midX)
-            {
-                this.from = new Point(this.from.X, this.from.Y + 2 * Math.Abs(midX - this.from.Y));
-            }
-            else
-            {
-                this.from = new Point(this.from.X, this.from.Y - 2 * Math.Abs(midX - this.from.Y));
-            }
-            if (this.to.Y < midX)
-            {
-                this.to = new Point(this.to.X, this.to.Y + 2 * Math.Abs(midX - this.to.Y));
-            }
-            else
-            {
-                this.to = new Point(this.to.X, this.to.Y - 2 * Math.Abs(midX - this.to.Y));
-            }
-        }
-
-        public override void RotateRight()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void RotateLeft()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

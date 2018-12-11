@@ -13,6 +13,7 @@ namespace SimpleDrawingKit.Tool
     class SelectTool : ATool
     {
         public bool isActive { set; get; }
+        public int Opacity { set; get; }
         public Point initial;
         public AObject objectSelected;
         private int posisiClick = -1;

@@ -90,6 +90,11 @@ namespace SimpleDrawingKit.Object
             DrawObject();
         }
 
+        //public override void SetTransparent()
+        //{
+
+        //}
+
         public override int GetClickHandle(Point posisi)
         {
             //throw new NotImplementedException();
@@ -154,26 +159,6 @@ namespace SimpleDrawingKit.Object
             this.from = new Point(this.from.X + difX, this.from.Y + difY);
             this.to = new Point(this.to.X + difX, this.to.Y + difY);
             notify();
-        }
-
-        public override void FlipVertical(int midY)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void FlipHorizontal(int midX)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void RotateRight()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void RotateLeft()
-        {
-            throw new NotImplementedException();
         }
     }
 }
