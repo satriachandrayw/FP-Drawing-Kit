@@ -16,7 +16,7 @@ namespace Paint2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Paint_sederhana.Form1());
+            Application.Run(new SimpleDrawingKit.Form1());
         }
     }
 }

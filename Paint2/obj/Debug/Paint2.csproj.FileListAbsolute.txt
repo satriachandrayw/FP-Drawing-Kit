@@ -17,3 +17,12 @@ D:\Documents\GitHub\simple-drawing-kit\Paint2\obj\Debug\Paint2.csproj.GenerateRe
 D:\Documents\GitHub\simple-drawing-kit\Paint2\obj\Debug\Paint2.csproj.CoreCompileInputs.cache
 D:\Documents\GitHub\simple-drawing-kit\Paint2\obj\Debug\Paint2.exe
 D:\Documents\GitHub\simple-drawing-kit\Paint2\obj\Debug\Paint2.pdb
+D:\Cloud\Dropbox\Tugas TC\KPL\simple-drawing-kit\Paint2\bin\Debug\Paint2.exe.config
+D:\Cloud\Dropbox\Tugas TC\KPL\simple-drawing-kit\Paint2\obj\Debug\Paint2.exe
+D:\Cloud\Dropbox\Tugas TC\KPL\simple-drawing-kit\Paint2\obj\Debug\Paint2.pdb
+D:\Cloud\Dropbox\Tugas TC\KPL\simple-drawing-kit\Paint2\obj\Debug\Paint2.csprojResolveAssemblyReference.cache
+D:\Cloud\Dropbox\Tugas TC\KPL\simple-drawing-kit\Paint2\obj\Debug\SimpleDrawingKit.Form1.resources
+D:\Cloud\Dropbox\Tugas TC\KPL\simple-drawing-kit\Paint2\obj\Debug\Paint2.Properties.Resources.resources
+D:\Cloud\Dropbox\Tugas TC\KPL\simple-drawing-kit\Paint2\obj\Debug\Paint2.csproj.GenerateResource.Cache
+D:\Cloud\Dropbox\Tugas TC\KPL\simple-drawing-kit\Paint2\bin\Debug\Paint2.exe
+D:\Cloud\Dropbox\Tugas TC\KPL\simple-drawing-kit\Paint2\bin\Debug\Paint2.pdb
