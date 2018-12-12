@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using System.Drawing;
+using System.Drawing;
 
 namespace SimpleDrawingKit.Tool
 {
@@ -14,7 +14,8 @@ namespace SimpleDrawingKit.Tool
     {
         public bool isActive { set; get; }
         public int rectangleOpacity { set; get; }
-        private Rectangle rectangleObject;
+        public Color rectangleColor { set; get; }
+        private Object.Rectangle rectangleObject;
         public override bool MouseClick(object sender, MouseEventArgs e, LinkedList<AObject> listObject)
         {
             System.Diagnostics.Debug.WriteLine("Click");
@@ -23,7 +24,7 @@ namespace SimpleDrawingKit.Tool
 
         public override void MouseDown(object sender, MouseEventArgs e, Panel panel1, LinkedList<AObject> listObject)
         {
-            rectangleObject = new Rectangle(e.Location, rectangleOpacity);
+            rectangleObject = new Object.Rectangle(e.Location, rectangleOpacity, rectangleColor);
             rectangleObject.to = e.Location;
             rectangleObject.setGraphics(panel1.CreateGraphics());
             rectangleObject.Draw();

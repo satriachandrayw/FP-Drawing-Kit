@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimpleDrawingKit.Interface
 {
-    public class Observerable//yang diamati
+    public class Observerable //Object yang di-observe
     {
         private LinkedList<IObserver> listObserver = new LinkedList<IObserver>();
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimpleDrawingKit.Interface
 {
-    public interface IObserver//yang mengamati
+    public interface IObserver //Observer
     {
         void Update(Observerable observable);
     }

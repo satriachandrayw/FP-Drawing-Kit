@@ -16,6 +16,7 @@ namespace SimpleDrawingKit.Object
         public int Width { get; set; }
         public int Height { get; set; }
         public int Opacity;
+        public Color shapeColor;
         private Pen p;
 
         public Rectangle()
@@ -24,19 +25,20 @@ namespace SimpleDrawingKit.Object
             p.Width = 2;
         }
 
-        public Rectangle(Point awal, int rectangleOpacity) : this()
+        public Rectangle(Point awal, int rectangleOpacity, Color rectangleColor) : this()
         {
             this.from = awal;
             this.Width = 0;
             this.Height = 0;
             this.Opacity = rectangleOpacity;
+            this.shapeColor = rectangleColor;
         }
 
         public override void DrawObject()
         {
             int width = to.X - from.X;
             int height = to.Y - from.Y;
-            SolidBrush fill = new SolidBrush(Color.FromArgb(Opacity, 0, 0, 0));
+            SolidBrush fill = new SolidBrush(Color.FromArgb(Opacity, shapeColor.R, shapeColor.G, shapeColor.B));
             System.Drawing.Rectangle rect = new System.Drawing.Rectangle(Math.Min(to.X, from.X),
                                                 Math.Min(to.Y, from.Y),
                                                 Math.Abs(to.X - from.X),

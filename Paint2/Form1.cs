@@ -3,12 +3,8 @@ using SimpleDrawingKit.Object;
 using SimpleDrawingKit.Tool;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
 
@@ -24,10 +20,10 @@ namespace SimpleDrawingKit
         }
         private bool shouldPaint = false;
         Boolean select;
-        Point initial;
 
         private bool SetState = false;
         private int sliderOpacity = 0;
+        public Color shapeColor;
         private AObject objectSelected;
         private int clickPosition = -1;
         private ATool toolSelected;
@@ -60,7 +56,6 @@ namespace SimpleDrawingKit
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            //Gambar = panel1.CreateGraphics();
 
             foreach (AObject Object in drawables)
             {
@@ -176,6 +171,7 @@ namespace SimpleDrawingKit
                     reset();
                     rectangleTool.rectangleOpacity = opacityTrackBar.Value;
                     rectangleTool.isActive = true;
+                    rectangleTool.rectangleColor = shapeColor;
                     toolSelected = rectangleTool;
                     buttonColor();
                     rectangleTool.BackColor = Color.Blue;
@@ -187,10 +183,6 @@ namespace SimpleDrawingKit
                 rectangleTool.isActive = false;
                 buttonColor();
             }
-            /*bentuk = 2;
-            rectang.BackColor = Color.Red;
-            circle.BackColor = Color.White;
-            line.BackColor = Color.White;*/
         }
         private void circleButton_Click(object sender, EventArgs e)
         {
@@ -199,6 +191,7 @@ namespace SimpleDrawingKit
             {
                     reset();
                     circleTool.circleOpacity = opacityTrackBar.Value;
+                    circleTool.circleColor = shapeColor;
                     circleTool.isActive = true;
                     toolSelected = circleTool;
                     buttonColor();
@@ -264,9 +257,6 @@ namespace SimpleDrawingKit
         private void refreshButton_Click(object sender, EventArgs e)
         {
             this.Refresh();
-            //textBox1.Text = " ";
-            //textBox2.Text = " ";
-            //textBox3.Text = " ";
         }
 
         private void deselectObject()
@@ -318,8 +308,6 @@ namespace SimpleDrawingKit
             SetState = false;
         }
 
-
-
         private void opacityTrackBar_Scroll(object sender, EventArgs e)
         {
             this.Refresh();
@@ -332,7 +320,6 @@ namespace SimpleDrawingKit
             }
 
         }
-
         private void setButton_Click(object sender, EventArgs e)
         {
             this.Refresh();
@@ -342,13 +329,16 @@ namespace SimpleDrawingKit
                 sliderOpacity = opacityTrackBar.Value;
                 SetState = true;
             }
+            else
+            {
+                reset();
+            }
         }
 
         public void Remove_Object(AObject Object)
         {
             drawables.Remove(Object);
         }
-
         public void Add_Object(AObject Object)
         {
             drawables.AddLast(Object);
@@ -356,40 +346,38 @@ namespace SimpleDrawingKit
 
         private void rebColorButton_Click(object sender, EventArgs e)
         {
-            /*SolidBrush fill = new SolidBrush(Color.FromArgb(100, 100,100,100));
-            RectangleTool.FillObject(fill, rect);*/
+            Refresh();
+            shapeColor = Color.Red;
         }
-
         private void orangeColorButton_Click(object sender, EventArgs e)
         {
-            lineTool.ForeColor = Color.Orange;
-            circleTool.ForeColor = Color.Orange;
-            rectangleTool.ForeColor = Color.Orange;
+            Refresh();
+            shapeColor = Color.Orange; 
         }
-
         private void yellowColorButton_Click(object sender, EventArgs e)
         {
-
+            Refresh();
+            shapeColor = Color.Yellow;
         }
-
         private void lightblueColorButton_Click(object sender, EventArgs e)
         {
-
+            Refresh();
+            shapeColor = Color.LightBlue;
         }
-
         private void blueColorButton_Click(object sender, EventArgs e)
         {
-
+            Refresh();
+            Color shapeColor = Color.Blue;
         }
-
         private void greenColorButton_Click(object sender, EventArgs e)
         {
-
+            Refresh();
+            Color shapeColor = Color.Green;
         }
-
         private void whiteColorButton_Click(object sender, EventArgs e)
         {
-
+            Refresh();
+            Color shapeColor = Color.Transparent;
         }
 
 

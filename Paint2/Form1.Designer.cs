@@ -43,7 +43,6 @@
             this.blueColorButton = new System.Windows.Forms.Button();
             this.greenColorButton = new System.Windows.Forms.Button();
             this.whiteColorButton = new System.Windows.Forms.Button();
-            this.browseColorButton = new System.Windows.Forms.Button();
             this.opacityTrackBar = new System.Windows.Forms.TrackBar();
             this.opacityText = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
@@ -90,7 +89,7 @@
             this.panel1.Location = new System.Drawing.Point(13, 104);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(673, 363);
+            this.panel1.Size = new System.Drawing.Size(682, 363);
             this.panel1.TabIndex = 3;
             this.panel1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseClick_1);
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown_1);
@@ -99,7 +98,7 @@
             // 
             // refreshButton
             // 
-            this.refreshButton.Location = new System.Drawing.Point(611, 15);
+            this.refreshButton.Location = new System.Drawing.Point(593, 15);
             this.refreshButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.refreshButton.Name = "refreshButton";
             this.refreshButton.Size = new System.Drawing.Size(75, 23);
@@ -110,7 +109,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(537, 15);
+            this.button1.Location = new System.Drawing.Point(519, 15);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(67, 23);
@@ -121,7 +120,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(469, 15);
+            this.button2.Location = new System.Drawing.Point(451, 15);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(60, 23);
@@ -209,17 +208,9 @@
             this.whiteColorButton.UseVisualStyleBackColor = false;
             this.whiteColorButton.Click += new System.EventHandler(this.whiteColorButton_Click);
             // 
-            // browseColorButton
-            // 
-            this.browseColorButton.Location = new System.Drawing.Point(423, 15);
-            this.browseColorButton.Name = "browseColorButton";
-            this.browseColorButton.Size = new System.Drawing.Size(36, 66);
-            this.browseColorButton.TabIndex = 15;
-            this.browseColorButton.UseVisualStyleBackColor = true;
-            // 
             // opacityTrackBar
             // 
-            this.opacityTrackBar.Location = new System.Drawing.Point(464, 43);
+            this.opacityTrackBar.Location = new System.Drawing.Point(451, 45);
             this.opacityTrackBar.Maximum = 100;
             this.opacityTrackBar.Name = "opacityTrackBar";
             this.opacityTrackBar.Size = new System.Drawing.Size(140, 56);
@@ -229,7 +220,7 @@
             // opacityText
             // 
             this.opacityText.AutoSize = true;
-            this.opacityText.Location = new System.Drawing.Point(608, 51);
+            this.opacityText.Location = new System.Drawing.Point(597, 51);
             this.opacityText.Name = "opacityText";
             this.opacityText.Size = new System.Drawing.Size(56, 17);
             this.opacityText.TabIndex = 17;
@@ -237,7 +228,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(29, 45);
+            this.button3.Location = new System.Drawing.Point(13, 45);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(47, 42);
             this.button3.TabIndex = 18;
@@ -249,11 +240,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 480);
+            this.ClientSize = new System.Drawing.Size(713, 480);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.opacityText);
             this.Controls.Add(this.opacityTrackBar);
-            this.Controls.Add(this.browseColorButton);
             this.Controls.Add(this.whiteColorButton);
             this.Controls.Add(this.greenColorButton);
             this.Controls.Add(this.blueColorButton);
@@ -298,7 +288,6 @@
         private System.Windows.Forms.Button blueColorButton;
         private System.Windows.Forms.Button greenColorButton;
         private System.Windows.Forms.Button whiteColorButton;
-        private System.Windows.Forms.Button browseColorButton;
         private System.Windows.Forms.TrackBar opacityTrackBar;
         private System.Windows.Forms.Label opacityText;
         private System.Windows.Forms.Button button3;

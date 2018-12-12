@@ -2,6 +2,7 @@
 using SimpleDrawingKit.Object;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ namespace SimpleDrawingKit.Tool
     {
         public bool isActive { set; get; }
         public int circleOpacity { set; get; }
+        public Color circleColor { set; get; }
         private Circle circleObject;
 
         public override bool MouseClick(object sender, MouseEventArgs e, LinkedList<AObject> listObject)
@@ -23,7 +25,7 @@ namespace SimpleDrawingKit.Tool
 
         public override void MouseDown(object sender, MouseEventArgs e, Panel panel1, LinkedList<AObject> listObject)
         {
-            circleObject = new Circle(e.Location, circleOpacity);
+            circleObject = new Circle(e.Location, circleOpacity, circleColor);
             circleObject.to = e.Location;
             circleObject.setGraphics(panel1.CreateGraphics());
             circleObject.Draw();

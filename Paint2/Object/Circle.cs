@@ -16,6 +16,7 @@ namespace SimpleDrawingKit.Object
         public int Width { get; set; }
         public int Height { get; set; }
         public int Opacity;
+        public Color shapeColor;
         private Pen p;
         //public int  
 
@@ -25,25 +26,26 @@ namespace SimpleDrawingKit.Object
             p.Width = 2;
         }
 
-        public Circle(Point awal, int circleOpacity) : this()
+        public Circle(Point awal, int circleOpacity, Color circleColor) : this()
         {
             this.from = awal;
             this.Height = 0;
             this.Width = 0;
             this.Opacity = circleOpacity;
+            this.shapeColor = circleColor;
         }
        
         public override void DrawObject()
         {
             int cirW = Math.Abs(to.X - from.X);
             int cirL = Math.Abs(to.Y - from.Y);
-            SolidBrush fill = new SolidBrush(Color.FromArgb(Opacity, 0, 0, 0));
             System.Drawing.Rectangle rec = new System.Drawing.Rectangle(Math.Min(to.X, from.X),
                                                 Math.Min(to.Y, from.Y),
                                                 Math.Abs(to.X - from.X),
                                                 Math.Abs(to.Y - from.Y));
             this.getGraphics().SmoothingMode = SmoothingMode.AntiAlias;
             this.getGraphics().DrawEllipse(p, rec);
+            SolidBrush fill = new SolidBrush(Color.FromArgb(Opacity, shapeColor.R, shapeColor.G, shapeColor.B));
             this.getGraphics().FillEllipse(fill, rec);
         }
 

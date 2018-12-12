@@ -27,5 +27,10 @@ namespace SimpleDrawingKit.Interface
         {
 
         }
+
+        public virtual void Fill(AObject obj)
+        {
+
+        }
     }
 }

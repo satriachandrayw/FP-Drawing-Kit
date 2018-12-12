@@ -77,6 +77,11 @@ namespace SimpleDrawingKit.Interface
             this.state.Deselect(this);
         }
 
+        public void Fill()
+        {
+            this.state.Fill(this);
+        }
+
         public virtual void setGraphics(Graphics graphics)
         {
             this.graphics = graphics;
