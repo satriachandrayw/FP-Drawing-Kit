@@ -210,7 +210,7 @@ namespace SimpleDrawingKit.Tool
 
         public override void KeyDown(object sender, KeyEventArgs e, Panel panel1)
         {
-            //System.Diagnostics.Debug.WriteLine(e.KeyCode.ToString() + " Pencet.");
+            /*//System.Diagnostics.Debug.WriteLine(e.KeyCode.ToString() + " Pencet.");
             if (e.KeyCode == Keys.Delete && objectSelected != null)
             {
                 ParentForm.Remove_Object(objectSelected);
@@ -252,7 +252,7 @@ namespace SimpleDrawingKit.Tool
             {
                 //System.Diagnostics.Debug.WriteLine(e.KeyCode.ToString() + " Control Saja.");
                 controlClick = true;
-            }
+            }*/
         }
     }
 }

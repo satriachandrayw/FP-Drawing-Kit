@@ -13,6 +13,8 @@ namespace SimpleDrawingKit.Tool
     class LineTool : ATool
     {
         public bool isActive { set; get; }
+        public int lineOpacity { set; get; }
+        public Color lineColor { set; get; }
         private Line lineObject;
 
         public LineTool()
@@ -29,7 +31,7 @@ namespace SimpleDrawingKit.Tool
 
         public override void MouseDown(object sender, MouseEventArgs e, Panel panel1, LinkedList<AObject> listObject)
         {
-            this.lineObject = new Line(e.Location);
+            this.lineObject = new Line(e.Location, lineOpacity, lineColor);
             System.Diagnostics.Debug.WriteLine(lineObject.from);
             this.lineObject.to = (e.Location);
             this.lineObject.setGraphics(panel1.CreateGraphics());

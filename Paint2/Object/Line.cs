@@ -13,22 +13,31 @@ namespace SimpleDrawingKit.Object
     {
         private const double EPSILON = 3.0;
         private Pen p;
+        private int Opacity;
+        public Color shapeColor;
 
         public Line()
         {
             this.p = new Pen(Color.Black);
             p.Width = 2;
+           
         }
 
-        public Line(Point awal) : this()
+        public Line(Point awal, int lineOpacity, Color lineColor) : this()
         {
             this.from = awal;
+            this.Opacity = lineOpacity;
+            this.shapeColor = lineColor;
+
+
         }
 
         public override void DrawObject()
         {
+            SolidBrush color = new SolidBrush(Color.FromArgb(Opacity, shapeColor.R, shapeColor.G, shapeColor.B));
             this.getGraphics().SmoothingMode = SmoothingMode.AntiAlias;
             this.getGraphics().DrawLine(p, from, to);
+            //this.p.Color=shapeColor;
         }
 
         public override void DrawPreview()

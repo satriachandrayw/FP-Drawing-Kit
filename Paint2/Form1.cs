@@ -1,6 +1,7 @@
 ﻿using SimpleDrawingKit.Interface;
 using SimpleDrawingKit.Object;
 using SimpleDrawingKit.Tool;
+using SimpleDrawingKit.ColorDecorator;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -31,6 +32,8 @@ namespace SimpleDrawingKit
         private CircleTool circleTool = new CircleTool();
         private RectangleTool rectangleTool = new RectangleTool();
         private SelectTool selectTool = new SelectTool();
+
+        //private fillColor fillColor = new fillColor();
 
         List<AObject> listObject = new List<AObject>();
         private LinkedList<AObject> drawables = new LinkedList<AObject>();
@@ -346,40 +349,31 @@ namespace SimpleDrawingKit
 
         private void rebColorButton_Click(object sender, EventArgs e)
         {
-            Refresh();
-            shapeColor = Color.Red;
+            fillColor.redColorShape();
         }
         private void orangeColorButton_Click(object sender, EventArgs e)
         {
-            Refresh();
-            shapeColor = Color.Orange; 
+            fillColor.orangeColorShape();
         }
         private void yellowColorButton_Click(object sender, EventArgs e)
         {
-            Refresh();
-            shapeColor = Color.Yellow;
+            fillColor.yellowColorShape();
         }
         private void lightblueColorButton_Click(object sender, EventArgs e)
         {
-            Refresh();
-            shapeColor = Color.LightBlue;
+            fillColor.lightblueColorShape();
         }
         private void blueColorButton_Click(object sender, EventArgs e)
         {
-            Refresh();
-            Color shapeColor = Color.Blue;
+            fillColor.blueColorShape();
         }
         private void greenColorButton_Click(object sender, EventArgs e)
         {
-            Refresh();
-            Color shapeColor = Color.Green;
+            fillColor.greenColorShape();
         }
         private void whiteColorButton_Click(object sender, EventArgs e)
         {
-            Refresh();
-            Color shapeColor = Color.Transparent;
+            fillColor.whiteColorShape();
         }
-
-
     }
 }

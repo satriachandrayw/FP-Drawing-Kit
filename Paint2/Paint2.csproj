@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ColorDecorator\DObject.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Interface\ADrawingState.cs" />
     <Compile Include="Interface\AObject.cs" />
     <Compile Include="Interface\ATool.cs">
@@ -54,7 +57,6 @@
     <Compile Include="Interface\IObserver.cs" />
     <Compile Include="Interface\Observerable.cs" />
     <Compile Include="Object\Circle.cs" />
-    <Compile Include="Object\GroupObject.cs" />
     <Compile Include="Object\Line.cs" />
     <Compile Include="Object\Rectangle.cs" />
     <Compile Include="State\EditState.cs" />
@@ -92,6 +94,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
