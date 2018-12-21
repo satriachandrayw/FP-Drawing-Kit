@@ -26,3 +26,12 @@ D:\Cloud\Dropbox\Tugas TC\KPL\simple-drawing-kit\Paint2\obj\Debug\Paint2.Propert
 D:\Cloud\Dropbox\Tugas TC\KPL\simple-drawing-kit\Paint2\obj\Debug\Paint2.csproj.GenerateResource.Cache
 D:\Cloud\Dropbox\Tugas TC\KPL\simple-drawing-kit\Paint2\bin\Debug\Paint2.exe
 D:\Cloud\Dropbox\Tugas TC\KPL\simple-drawing-kit\Paint2\bin\Debug\Paint2.pdb
+C:\Users\satria1978\Documents\GitHub\FP-Drawing-Kit\Paint2\bin\Debug\Paint2.exe.config
+C:\Users\satria1978\Documents\GitHub\FP-Drawing-Kit\Paint2\obj\Debug\Paint2.exe
+C:\Users\satria1978\Documents\GitHub\FP-Drawing-Kit\Paint2\obj\Debug\Paint2.pdb
+C:\Users\satria1978\Documents\GitHub\FP-Drawing-Kit\Paint2\obj\Debug\Paint2.csprojResolveAssemblyReference.cache
+C:\Users\satria1978\Documents\GitHub\FP-Drawing-Kit\Paint2\obj\Debug\SimpleDrawingKit.Form1.resources
+C:\Users\satria1978\Documents\GitHub\FP-Drawing-Kit\Paint2\obj\Debug\Paint2.Properties.Resources.resources
+C:\Users\satria1978\Documents\GitHub\FP-Drawing-Kit\Paint2\obj\Debug\Paint2.csproj.GenerateResource.Cache
+C:\Users\satria1978\Documents\GitHub\FP-Drawing-Kit\Paint2\bin\Debug\Paint2.exe
+C:\Users\satria1978\Documents\GitHub\FP-Drawing-Kit\Paint2\bin\Debug\Paint2.pdb

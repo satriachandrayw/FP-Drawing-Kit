@@ -32,8 +32,7 @@ namespace SimpleDrawingKit
         private CircleTool circleTool = new CircleTool();
         private RectangleTool rectangleTool = new RectangleTool();
         private SelectTool selectTool = new SelectTool();
-
-        //private fillColor fillColor = new fillColor();
+        private fillColor fillColor = new fillColor();
 
         List<AObject> listObject = new List<AObject>();
         private LinkedList<AObject> drawables = new LinkedList<AObject>();
@@ -349,31 +348,68 @@ namespace SimpleDrawingKit
 
         private void rebColorButton_Click(object sender, EventArgs e)
         {
-            fillColor.redColorShape();
+            if (SetState = false)
+            {
+                sliderOpacity = opacityTrackBar.Value;
+                fillColor.redColorShape();
+                //SetState = true;
+            }
+           
         }
         private void orangeColorButton_Click(object sender, EventArgs e)
         {
-            fillColor.orangeColorShape();
+            if (SetState = false)
+            {
+                sliderOpacity = opacityTrackBar.Value;
+                fillColor.orangeColorShape();
+                //SetState = true;
+            }
+         
+                
         }
         private void yellowColorButton_Click(object sender, EventArgs e)
         {
-            fillColor.yellowColorShape();
+            if (SetState = false)
+            {
+                
+                fillColor.yellowColorShape();
+            }
+            
         }
         private void lightblueColorButton_Click(object sender, EventArgs e)
         {
-            fillColor.lightblueColorShape();
+            if (SetState = false)
+            {
+                sliderOpacity = opacityTrackBar.Value;
+                fillColor.lightblueColorShape();
+
+            }
+           
         }
         private void blueColorButton_Click(object sender, EventArgs e)
         {
-            fillColor.blueColorShape();
+            if (SetState = false)
+            {
+                sliderOpacity = opacityTrackBar.Value;
+                fillColor.blueColorShape();
+            }
         }
         private void greenColorButton_Click(object sender, EventArgs e)
         {
-            fillColor.greenColorShape();
+            if (SetState = false)
+            {
+                sliderOpacity = opacityTrackBar.Value;
+                fillColor.greenColorShape();
+            }
         }
         private void whiteColorButton_Click(object sender, EventArgs e)
         {
-            fillColor.whiteColorShape();
+            if (SetState = false)
+            {
+                sliderOpacity = opacityTrackBar.Value;
+                fillColor.whiteColorShape();
+            }
+            
         }
     }
 }

@@ -9,51 +9,58 @@ using System.Threading.Tasks;
 
 namespace SimpleDrawingKit.ColorDecorator
 {
-    public abstract class Decorator : Form1
+    public abstract class Decorator
     {
         public int Opacity;
-        public Color shapeColor;
-        protected Form1 main;
+        public Form1 main;
+        //public Color shapeColor;
+        
 
-        public Decorator(Form1 main)
+
+        public Decorator()
         {
-            this.main = main;
+            //this.main = Form1;
         }
     }
 
-    class fillColor : Decorator
+    public class fillColor : Decorator
     {
-        public static void redColorShape()
+        public fillColor()
+        {
+            
+        }
+
+        public void redColorShape()
         {
             //Refresh();
             main.shapeColor = Color.Red;
         }
-        public static void orangeColorShape()
+        public void orangeColorShape()
         {
             //Refresh();
             main.shapeColor = Color.Orange;
         }
-        public static void yellowColorShape()
+        public void yellowColorShape()
         {
             //Refresh();
             main.shapeColor = Color.Yellow;
         }
-        public static void lightblueColorShape()
+        public void lightblueColorShape()
         {
             //Refresh();
             main.shapeColor = Color.LightBlue;
         }
-        public static void blueColorShape()
+        public void blueColorShape()
         {
             //Refresh();
             main.shapeColor = Color.Blue;
         }
-        public static void greenColorShape()
+        public void greenColorShape()
         {
             //Refresh();
             main.shapeColor = Color.Green;
         }
-        public static void whiteColorShape()
+        public void whiteColorShape()
         {
             //Refresh();
             main.shapeColor = Color.Transparent;
